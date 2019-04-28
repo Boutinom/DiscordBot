@@ -5,11 +5,12 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-client.on('message', function (user, userID, channelID, message, evt) {
+client.on('message', message => {
+    var msg = message.content;
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    if (message.substring(0, 5) == '!roll') {
-      var arg = message.substring(6, message.length-1);
+    if (msg.substring(0, 5) == '!roll') {
+      var arg = msg.substring(6, msg.length-1);
       var sep = arg.indexOf("d");
       var mult = Number(arg.substring(0, sep));
       var type = Number(arg.substring(sep + 1, arg.length));
@@ -29,10 +30,7 @@ client.on('message', function (user, userID, channelID, message, evt) {
         res = res + " = " + sum;
       }
 
-      client.sendMessage({
-        to: channelID,
-        message: res
-      });
+      message.channel.send(res);
 
             // Just add any case commands if you want to..
      }
