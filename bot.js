@@ -57,7 +57,7 @@ function roll(message, arg) {
 }
 
 function help(message){
-    const embed = new RichEmbed()
+    const embed = new Discord.RichEmbed()
       // Set the title of the field
       .setTitle('A slick little embed')
       // Set the color of the embed
