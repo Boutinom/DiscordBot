@@ -60,6 +60,13 @@ function roll(arg) {
 }
 
 function help(){
+    var res = new new RichEmbed()
+    
+    .setTitle("L'Appli Unique")
+    .setColor(0xFF8888)
+    .setDescription("Cette application a vocation a les rassembler toutes, et dans les ténèbres les lier.");
+    
+    return res;
     
 }
 
