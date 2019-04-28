@@ -67,7 +67,7 @@ function help(message){
     
       .addBlankField()
       .addField("help()", "Renvoie la liste des fonctions disponibles.")
-      .addField("roll(dice)", "Permets de jeter des dés et de laisser le destin décider de ton.. destin. Exemple(!roll(1d20), !roll(3d6), etc)");
+      .addField("roll(dice)", "Permet de jeter des dés et de laisser le destin décider de ton.. destin. Exemple(!roll(1d20), !roll(3d6), etc)");
     
     message.channel.send(embed);
     
