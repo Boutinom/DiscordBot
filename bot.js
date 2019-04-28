@@ -6,9 +6,9 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+     var message = msg.content;
+    
     if (message.substring(0, 5) == '!roll') {
-    var message = msg.content;
-
       msg.reply(message);}
 });
 
