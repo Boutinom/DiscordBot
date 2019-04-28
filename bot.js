@@ -17,26 +17,23 @@ client.on('message', message => {
         
       switch(func){
           case "help":
-              var res = help();
+              help(message);
               break;
               
           case "roll":
-              var res = roll(arg);
+              roll(message, arg);
               break;
               
           default:
-              var res = "Cette fonction n'est pas définie. Pour connaître la liste des fonctions disponible, utilise !help().";
+              message.channel.send("Cette fonction n'est pas définie. Pour connaître la liste des fonctions disponible, utilise !help().");
               break;
       }
-
-
-      message.channel.send(res);
 
             // Just add any case commands if you want to..
      }
 });
 
-function roll(arg) {
+function roll(message, arg) {
       var sep = arg.indexOf("d");
       var mult = Number(arg.substring(0, sep));
       var type = Number(arg.substring(sep + 1, arg.length));
@@ -56,11 +53,11 @@ function roll(arg) {
         res = res + " = " + sum;
       }
     
-    return res;
+    message.channel.send(res);
 }
 
-function help(){
-    const res = new RichEmbed()
+function help(message){
+    const embed = new RichEmbed()
       // Set the title of the field
       .setTitle('A slick little embed')
       // Set the color of the embed
@@ -68,7 +65,7 @@ function help(){
       // Set the main content of the embed
       .setDescription('Hello, this is a slick embed!');
     
-    return res;
+    message.channel.send(embed);
     
 }
 
