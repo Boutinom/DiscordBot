@@ -5,8 +5,7 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-client.on('message', msg => {
-     var message = msg.content;
+client.on('message', function (user, userID, channelID, message, evt) {
     
     if (message.substring(0, 1) == '!') {
       var par1 = message.indexOf("(");
@@ -25,7 +24,10 @@ client.on('message', msg => {
             res = "Fonction inconnue. Utilise !help() pour visualiser la liste des fonctions disponibles."
 } 
         
-      msg.reply(res);}
+      client.sendMessage({
+        to: channelID,
+        message: res
+      });
 });
 
 function roll(arg) {
