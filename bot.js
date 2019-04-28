@@ -9,10 +9,10 @@ client.on('message', msg => {
      var message = msg.content;
     
     if (message.substring(0, 1) == '!') {
-        var par1 = message.indexOf("(");
-        var func = message.substring(1, par1 -1);
-      //var arg = message.substring(6, message.length-1);
-      var res = func;
+      var par1 = message.indexOf("(");
+      var func = message.substring(1, par1);
+      var arg = message.substring(par1, message.length-1);
+      var res = arg;
         
       msg.reply(res);}
 });
