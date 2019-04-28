@@ -11,8 +11,19 @@ client.on('message', msg => {
     if (message.substring(0, 1) == '!') {
       var par1 = message.indexOf("(");
       var func = message.substring(1, par1);
-      var arg = message.substring(par1, message.length-1);
-      var res = arg;
+      var arg = message.substring(par1 + 1, message.length-1);
+      var res = "";
+        
+      switch(func) {
+        case "help":
+            res = help();
+        break;
+        case "roll":
+            res = roll(arg);
+        break;
+        default:
+            res = "Fonction inconnue. Utilise !help() pour visualiser la liste des fonctions disponibles."
+} 
         
       msg.reply(res);}
 });
@@ -38,6 +49,10 @@ function roll(arg) {
       }
     
     return res;
+}
+
+function help(){
+    
 }
 
 // THIS  MUST  BE  THIS  WAY
