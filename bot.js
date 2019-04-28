@@ -5,9 +5,10 @@ client.on('ready', () => {
     console.log('I am ready!');
 });
 
-client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.reply('pong');
+client.on('message', msg => {
+    var message = msg.content;
+    if (message === 'ping') {
+    	msg.reply('pong');
   	}
 });
 
