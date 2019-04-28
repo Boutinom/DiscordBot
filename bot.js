@@ -65,6 +65,7 @@ function help(message){
       // Set the main content of the embed
       .setDescription('Une appli pour les rassembler toutes, et dans les ténèbres les lier.')
     
+      .addBlankField()
       .addField("help()", "Renvoie la liste des fonctions disponibles.")
       .addField("roll(dice)", "Permets de jeter des dés et de laisser le destin décider de ton.. destin. Exemple(!roll(1d20), !roll(3d6), etc)");
     
