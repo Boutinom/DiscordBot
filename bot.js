@@ -6,6 +6,8 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
+    message.channel.send("TEST");
+    
     var msg = message.content;
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
