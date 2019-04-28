@@ -8,7 +8,7 @@ client.on('ready', () => {
 client.on('message', msg => {
     var message = msg.content;
     if (message === 'ping') {
-    	msg.reply('pong');
+    	msg.reply('test');
   	}
 });
 
