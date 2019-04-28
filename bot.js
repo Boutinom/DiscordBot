@@ -60,11 +60,13 @@ function roll(arg) {
 }
 
 function help(){
-    var res = new RichEmbed()
-    
-    .setTitle("Test")
-    .setColor(0xFF0000)
-    .setDescription("Loooooong test");
+    const res = new RichEmbed()
+      // Set the title of the field
+      .setTitle('A slick little embed')
+      // Set the color of the embed
+      .setColor(0xFF0000)
+      // Set the main content of the embed
+      .setDescription('Hello, this is a slick embed!');
     
     return res;
     
