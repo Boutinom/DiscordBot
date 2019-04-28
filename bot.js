@@ -13,10 +13,24 @@ client.on('message', message => {
     if (msg.substring(0, 1) == '!') {
       var par1 = msg.indexOf("(");
       var func = msg.substring(1, par1);
-      var arg = msg.substring(par1 + 2, msg.length-1);
+      var arg = msg.substring(par1 + 1, msg.length-1);
+        
+      switch(func){
+          case "help":
+              var res = help();
+              break;
+              
+          case "roll":
+              var res = roll(arg);
+              break;
+              
+          default:
+              var res = "Cette fonction n'est pas définie. Pour connaître la liste des fonctions disponible, utilise !help().";
+              break;
+      }
 
 
-      message.channel.send(func + arg);
+      message.channel.send(res);
 
             // Just add any case commands if you want to..
      }
