@@ -60,7 +60,7 @@ function roll(arg) {
 }
 
 function help(){
-    var res = new new RichEmbed()
+    var res = new RichEmbed()
     
     .setTitle("Test")
     .setColor(0xFF0000)
