@@ -59,11 +59,14 @@ function roll(message, arg) {
 function help(message){
     const embed = new Discord.RichEmbed()
       // Set the title of the field
-      .setTitle('A slick little embed')
+      .setTitle('L\'Appli Unique')
       // Set the color of the embed
-      .setColor(0xFF0000)
+      .setColor(0x009090)
       // Set the main content of the embed
-      .setDescription('Hello, this is a slick embed!');
+      .setDescription('Une appli pour les rassembler toutes, et dans les ténèbres les lier.')
+    
+      .addField("help()", "Renvoie la liste des fonctions disponibles.")
+      .addField("roll(dice)", "Permets de jeter des dés et de laisser le destin décider de ton.. destin. Exemple(!roll(1d20), !roll(3d6), etc)");
     
     message.channel.send(embed);
     
